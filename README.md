@@ -1,6 +1,8 @@
 # PterodactylConsole
 A script to connect to the server console using Pterodactyl API.
 
+![Alt text](preview-files/Console.png)
+
 ## Requirements
 - Python 3.x
 - websocket-client (install using `pip install websocket-client`)
