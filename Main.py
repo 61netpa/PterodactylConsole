@@ -191,7 +191,9 @@ class Main:
         with UI.window(label = "Console", tag = "MainWindow", width = 630, height = 710, no_title_bar = False, no_resize = True, no_move = True, no_collapse = True, no_scroll_with_mouse = True, no_scrollbar = True, on_close = self.OnExit):
             with UI.child_window(tag = "OutputConsole", height = -160):
                 self.UIFunctions.AddLabel("OutputConsole", "ConsoleBuffer", self.LogBuffer);
-            self.UIFunctions.AddInputString("MainWindow", "InputBar", { "hint": "Enter command here...", "width": -1, "on_enter": True, "callback": self.SendConsoleCommand });
+            with UI.group(tag = "ServerCommandBar", horizontal = True):
+                self.UIFunctions.AddInputString("ServerCommandBar", "InputBar", { "hint": "Enter command here...", "width": -148, "on_enter": True, "callback": self.SendConsoleCommand });
+                self.UIFunctions.AddButton("ServerCommandBar", { "width": 140, "label": "Send", "callback": self.SendConsoleCommand });
             with UI.group(tag = "ServerStatusGroup", horizontal = True):
                 self.UIFunctions.AddLabel("ServerStatusGroup", "ServerStatusTitle", "Server Status:");
                 self.UIFunctions.AddLabel("ServerStatusGroup", "ServerStatus", "Offline", { "color": (255, 50, 50) });
