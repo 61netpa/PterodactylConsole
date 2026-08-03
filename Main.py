@@ -299,7 +299,7 @@ class Main:
                 except (json.JSONDecodeError):
                     pass;
                 except (Exception) as Error:
-                    print(f"An error has occured. Error: {Error}");
+                    print(f"An error has occurred. Error: {Error}");
                     self.Connection = None;
                     time.sleep(5);
 
